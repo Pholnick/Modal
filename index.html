@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    * {
+      font-family: Sans-Serif;
+      box-sizing: border-box;
+    }
+ 
+    .modal {
+      position: fixed;
+      z-index: 7;
+      background-color: rgba(0, 0, 0, 0.5);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+   
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility .2s, opacity .2s;
+    }
+
+    .content {
+      width: 100%;
+      height: auto;
+      background-color: white;
+      text-align: center;
+      padding: 80px;
+      font-size: 20px;
+      overflow: hidden;
+      
+      margin-top: -10px;
+      transition: margin-top 0.5s;
+    }
+    .foto{
+        margin-top: -11px;
+        
+    }
+    #button{
+        align-items: left;
+    }
+
+    .show {
+      visibility: visible;
+      opacity: 1;
+    }
+    
+    .show > .content {
+      margin: 0px;
+    }
+    
+    .text {
+      margin-bottom: 20px;
+    }
+    
+    @media (min-width: 800px) {
+      .content {
+        width: 50%;
+      }
+    }
+
+    
+.lightbox-gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: -71px;
+  margin-bottom: 29px;
+}
+
+.lightbox-gallery div > img {
+  max-width: 100%;
+  display: block;
+}
+
+.lightbox-gallery div  {
+  
+  margin-right: 27px;
+  
+  flex-basis: 216px;
+}
+
+@media only screen and (max-width: 480px) {
+  .lightbox-gallery .ins {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lightbox > div .ins{
+    margin-bottom: 10px;
+  }
+}
+
+
+
+.lightbox .ins {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+
+.lightbox img .ins{
+  display: block;
+  margin: auto;
+}
+
+.lightbox .caption {
+  margin: 15px auto;
+  width: 50%;
+  text-align: center;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #eee;
+}
+
+
+</style>
+
+  <script>
+    function hideModal() {
+			const modal = document.querySelector('.modal');
+      modal.classList.remove('show');
+    }
+
+    function showModal (param1, param2){
+			const modal = document.querySelector('.modal');
+      
+      
+      
+      
+     	modal.classList.add('show');
+    }
+  </script>
+
+  <body>
+    <div>
+      <div class="modal">
+        <div class="content">
+            <div class="lightbox-gallery">   <img class="foto" src="https://picsum.photos/id/237/200/300"></div>
+         
+        
+          <div class="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida arcu non sem cursus laoreet. Vestibulum aliquet iaculis diam. Cras nec euismod eros, in egestas nulla. Etiam vitae finibus neque. Phasellus rhoncus sodales eros, sed viverra neque. Fusce a urna justo. Vestibulum posuere at metus a efficitur. In vitae facilisis metus.
+
+        </div>
+            <button onclick="hideModal()">
+                Cerrar
+            </button>
+         
+        </div>
+      </div>
+        <button onclick="showModal('Mi titulo nada', 'Mi descripcion')">
+            Abrir modal
+        </button>
+      
+      
+     
+    </div>
+  </body>
+    </div>
+  </body>
+
+</html>
